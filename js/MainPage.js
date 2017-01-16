@@ -107,11 +107,29 @@ export default class MainPage extends Component {
      * 点击Observable的fromEvent按钮
      */
     onFromEventClick = () => {
-        // console.log('fromEvent函数');
-        // Rx.Observable.timer(500, 200).take(4).subscribe((x) => {
-        //     console.log('=> Next : ' + x);
+        console.log('fromEvent函数');
+        let text = this.refs.eventText;
+        alert(text.style);
+        let btn = this.refs.testBtn;
+        // if(btn){
+        //     alert('获取到了对象：' + btn.value );
+        // }else{
+        //     alert('没有获取到对象');
+        // }
+        let ob = Rx.Observable.fromEvent(this.refs.testBtn, 'click');
+        // if (ob) {
+        //     alert('获取到了对象：' + ob);
+        // } else {
+        //     alert('没有获取到对象');
+        // }
+        // ob.subscribe((x) => {
+        //     console.log('=> onNext : ' + x);
+        // }, (e) => np{
+        //     console.log('=> onError : ' + e);
+        // }, () => {
+        //     console.log('=> onComplete ');
         // });
-        alert('该方法在RN中还不知道如何使用');
+        // alert('该方法在RN中还不知道如何使用');
     };
 
     /**
@@ -397,8 +415,8 @@ export default class MainPage extends Component {
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button1} onPress={this.onFromEventClick}>
-                        <Text style={styles.buttonText}>
+                    <TouchableOpacity ref="testBtn" style={styles.button1} onPress={this.onFromEventClick}>
+                        <Text ref="eventText" style={styles.buttonText}>
                             fromEvent
                         </Text>
                     </TouchableOpacity>
