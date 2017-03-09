@@ -557,7 +557,7 @@ export default class MainPage extends Component {
     };
 
     /**
-     * 点击Subject的AsyncSubject按钮
+     * 点击Subject的AsyncSubject按钮，只在complete的时候才返回最新的值
      */
     onAsyncSubjectClick = () => {
         console.log('AsyncSubject方法');
@@ -581,7 +581,7 @@ export default class MainPage extends Component {
     };
 
     /**
-     * 点击Subject的BehaviorSubject按钮
+     * 点击Subject的BehaviorSubject按钮，每次在有订阅的时候均只返回最新值
      */
     onBehaviorSubjectClick = () => {
         console.log('BehaviorSubject方法');
@@ -603,7 +603,7 @@ export default class MainPage extends Component {
     };
 
     /**
-     * 点击Subject的ReplaySubject按钮
+     * 点击Subject的ReplaySubject按钮，第二个参数是存储的最大时间，毫秒为单位
      */
     onReplaySubjectClick = () => {
         console.log('ReplaySubject方法');
